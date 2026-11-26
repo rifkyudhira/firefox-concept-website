@@ -1,0 +1,38 @@
+<svg width="1920" height="784" viewBox="0 0 1920 784" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_3_2264)">
+<g opacity="0.8" filter="url(#filter0_f_3_2264)">
+<g clip-path="url(#clip1_3_2264)">
+<rect x="1115.03" y="-134" width="1737.88" height="1737.88" rx="868.94" transform="rotate(52.2657 1115.03 -134)" fill="#1D1234"/>
+<g filter="url(#filter1_f_3_2264)">
+<circle cx="118.124" cy="1049.48" r="649.056" fill="#FFAD4D"/>
+</g>
+<g filter="url(#filter2_f_3_2264)">
+<path d="M970.853 680.542C1505.18 329.947 2000.28 1217.1 2013.48 1232.88L1599.55 134.703L458.477 -146.947C256.112 86.2649 -84.9085 545.343 169.927 515.955C488.471 479.22 841.859 997.404 706.597 1248.99C776.245 1130.25 743.636 837.308 970.853 680.542Z" fill="#670F8B"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_3_2264" x="-397.685" y="-272.3" width="2714.6" height="2714.6" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="69.15" result="effect1_foregroundBlur_3_2264"/>
+</filter>
+<filter id="filter1_f_3_2264" x="-675.563" y="255.788" width="1587.37" height="1587.37" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="72.3" result="effect1_foregroundBlur_3_2264"/>
+</filter>
+<filter id="filter2_f_3_2264" x="27.532" y="-198.447" width="2037.45" height="1498.94" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="25.75" result="effect1_foregroundBlur_3_2264"/>
+</filter>
+<clipPath id="clip0_3_2264">
+<rect width="1920" height="784" fill="white"/>
+</clipPath>
+<clipPath id="clip1_3_2264">
+<rect x="1115.03" y="-134" width="1737.88" height="1737.88" rx="868.94" transform="rotate(52.2657 1115.03 -134)" fill="white"/>
+</clipPath>
+</defs>
+</svg>
