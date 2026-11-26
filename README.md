@@ -1,58 +1,100 @@
 # Firefox Concept Website
 
-Responsive frontend based on the supplied desktop (1920px) and mobile (393px) designs. Built with Next.js App Router, TypeScript, Tailwind CSS, and Poppins from Google Fonts through `next/font/google`.
+A responsive Firefox and Mozilla landing-page concept that combines the nostalgia of early web browsing with a contemporary visual style. Built with Next.js, TypeScript, and Tailwind CSS, the project translates desktop and mobile designs into an interactive frontend experience.
 
-## Run locally
+## Overview
 
-Requires Node.js 20.9 or later.
+The page follows a story from Firefox’s beginnings to an AI-inspired browsing concept. It brings together browser features, press coverage, a visual history timeline, community participation, and a newsletter interface.
+
+This is an independent design concept, not an official Mozilla product or website. The AI section presents a design exploration rather than a working AI service.
+
+## Features
+
+- **Responsive layout:** desktop navigation, a mobile menu, and layouts adapted for narrow screens.
+- **Animated homepage entrance:** the navbar fades in, the gradient appears, the vintage computer slides upward, and the text and actions follow in sequence.
+- **Feature carousel:** supplied SVG icons, staggered hover interactions, keyboard focus support, and equal-height mobile cards with neighboring cards visible.
+- **Press coverage strip:** consistent logo color and opacity, arranged in a two-column grid on mobile.
+- **Browser history carousel:** four milestones—2002, 2004, 2011, and 2017—with swipe navigation, keyboard controls, and synchronized desktop timeline indicators.
+- **Community section:** volunteer and donation cards with the original half-circle gradient background.
+- **Scroll reveals:** components fade into view with staggered timing. Reduced-motion preferences are respected.
+- **Frontend forms:** labeled inputs, browser validation, and clear preview messages for the AI prompt and newsletter forms.
+
+## Technology
+
+| Area | Tools |
+| --- | --- |
+| Framework | Next.js App Router and React |
+| Language | TypeScript |
+| Styling | Tailwind CSS and custom responsive CSS |
+| Typography | Poppins from Google Fonts via `next/font/google` |
+| Motion | CSS animations, IntersectionObserver, and requestAnimationFrame |
+| Output | Static export |
+
+## Getting started
+
+Requires Node.js 20.9 or later and npm.
 
 ```sh
-npm install
+git clone https://github.com/rifkyudhira/firefox-concept-website.git
+cd firefox-concept-website
+npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:3000.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000).
+
+To use another port:
+
+```sh
+npm run dev -- --port 3001
+```
+
+### Validation and build
 
 ```sh
 npm run typecheck
 npm run build
 ```
 
-The build generates a static website in `out/`.
+The production build creates a static site in `out/`, ready for a static hosting provider. Google Fonts access is needed when the font is first fetched during development or a build.
 
 ## Project structure
 
-- `src/app/page.tsx`: page sections, navigation, feature carousel, history timeline, frontend form interactions.
-- `src/app/globals.css`: Tailwind import, design tokens, section styling, mobile breakpoint at 767px.
-- `src/app/layout.tsx`: metadata and Google Fonts setup.
-- `public/images` and `public/icons`: supplied design assets.
+```text
+src/app/
+  layout.tsx          Page metadata and typography
+  page.tsx            Page sections and interactive behavior
+  globals.css         Design tokens, responsive layouts, and motion
+public/
+  icons/              Logos and interface icons used by the website
+  images/             Illustrations, backgrounds, and texture assets
+Icons/                Original supplied SVG assets
+Images/               Original supplied images and design references
+```
 
-## Design notes
+The original desktop and mobile references are available in `Images/desktop.jpg` and `Images/mobile.jpg`.
 
-Colors: canvas `#F6F4F8`, text `#110217`, purple `#4C1662`, lavender `#BB94EC`, orange `#FFB347`, section gradient `#280D61` → `#1D1234`.
+## Visual direction
 
-The standalone AI illustration was absent, so `ai-illustration.jpg` is a crop from the supplied desktop reference. Replace it with an original export for the cleanest production asset. All other illustrations and logos use supplied individual assets.
+The design pairs a light canvas with deep purple sections, warm orange actions, soft gradients, and restrained grain. Typography and artwork preserve a familiar Mozilla-inspired character while the layouts and motion give the page a contemporary feel.
 
-The mobile menu, horizontal feature carousel, and four-year history timeline work locally. Download, donation, volunteer, and resource links open their relevant external destinations. Newsletter and AI forms validate inputs and explicitly show preview-only messages; they do not send or store submissions. Connect real services before production use. The AI copy reproduces the supplied concept and should receive product review before publication.
+| Color | Hex |
+| --- | --- |
+| Canvas | `#F6F4F8` |
+| Primary text | `#110217` |
+| Purple | `#4C1662` |
+| Lavender | `#BB94EC` |
+| Orange | `#FFB347` |
+| Dark gradient | `#280D61` → `#1D1234` |
 
-Setup follows the official Next.js installation guide: https://nextjs.org/docs/app/getting-started/installation and Tailwind CSS guide: https://tailwindcss.com/docs/installation/framework-guides/nextjs.
+## Project status
 
-## Texture and motion
+The website is a frontend concept. Navigation, carousels, responsive layouts, and animations are implemented. Download, donation, volunteer, and resource actions link to external destinations.
 
-`overlay-grain.png` is the supplied Figma texture (its alpha already contains the 30% fill). A 0.35 overlay multiplier gives a restrained result without enlarging the grain. The hero uses the clean SVG gradient; the AI backdrop is softened separately from the foreground artwork.
+The AI and newsletter forms do not send or store submissions; they need backend integrations to become functional services. The AI illustration currently uses a crop of the supplied desktop reference.
 
-Motion uses 420ms eased controls, 650ms card/timeline transitions, a 780ms eased carousel, and 850ms one-time viewport fades staggered by 90ms. `IntersectionObserver` disconnects from revealed components. Reduced-motion preferences disable animation and keep content visible; manual scrolling cancels carousel animation. Keyboard focus exposes feature details.
+Mozilla, Firefox, and the featured publication names and logos belong to their respective owners. Their appearance here is part of the design concept.
 
-## Masthead sizing
+## Author
 
-Navbar + hero fill `min(100svh, 1128px)`. The 1128px cap follows the supplied desktop design so an expanded CSS viewport (such as browser zoom-out) does not stretch the masthead indefinitely. Desktop navbar height is 96px; mobile is 76px. Below 540px viewport height, the hero grows naturally to keep controls accessible. The artwork scales with the remaining hero area using container height units.
-
-The mobile dropdown uses `display: none` on desktop to avoid affecting navbar alignment. Hero grain is overlay-composited on a white-backed gradient, faded at the upper edge, then multiplied onto the page canvas. AI grain uses a saturation mask so neutral areas stay clean. The community section uses the supplied half-circle gradient without added processing, bottom-aligned at its original aspect ratio on mobile.
-
-## Responsive interactions
-
-- Equal-height mobile feature cards with 64px icons and centered scroll snapping.
-- Two-by-two mobile press-logo grid with matching color and opacity.
-- Swipeable browser-history carousel; desktop timeline dots stay synchronized, with dots hidden on mobile.
-- Vertical gestures over either carousel scroll the page.
-- Staggered homepage entrance: navbar, gradient opacity, computer slide-up, then text and actions. Reduced-motion preferences are respected.
+Designed and developed by [Maulana Rifky Yudhira](https://github.com/rifkyudhira).
